@@ -3,7 +3,7 @@ on:
   push:
 jobs:
   docker:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       -
         name: Set up QEMU test
@@ -22,4 +22,4 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/qod:docker-ci-setup
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/qod-runner:docker-ci-setup
